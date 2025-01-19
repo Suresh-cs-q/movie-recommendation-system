@@ -1,0 +1,192 @@
+/* General Container Styles */
+.container {
+  padding: 2rem 1rem;
+  background: linear-gradient(to bottom, #1c1c1c, #282a36);
+  min-height: 100vh;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  animation: fadeIn 0.5s ease-in-out;
+  width: 100%; /* Ensures no horizontal overflow */
+  box-sizing: border-box; /* Includes padding in width calculations */
+}
+
+/* Header Section */
+.header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.header h1 {
+  font-size: 2.4rem;
+  background: linear-gradient(90deg, #ff69b4, #ff6f61);
+  color: transparent;
+  background-clip: text;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.header p {
+  font-size: 1rem;
+  color: #e0e0e0;
+  margin-bottom: 1rem;
+}
+
+/* Movie Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Ensures exactly 4 columns */
+  gap: 1.5rem;
+  margin: 1rem 0;
+  width: 100%; /* Prevents overflow */
+}
+
+/* Movie Card */
+.card {
+  background: #2a2a5f;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.7);
+}
+
+/* Movie Poster */
+.poster {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-bottom: 4px solid #ff758c;
+}
+
+/* Card Content */
+.cardContent {
+  padding: 1rem;
+  text-align: center;
+}
+
+.title {
+  font-size: 1.4rem;
+  color: #fff;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  text-transform: capitalize;
+  overflow: hidden; /* Prevents overflow of long titles */
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.genre {
+  font-size: 1rem;
+  color: #b0b0d9;
+  overflow: hidden; /* Handles long genre lists */
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Card Actions */
+.actions {
+  padding: 0.8rem;
+  text-align: center;
+}
+
+.button {
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  background: linear-gradient(90deg, #ff7c92, #ff89b1);
+  color: #fff;
+  box-shadow: 0 3px 8px rgba(255, 120, 144, 0.3);
+  transition: all 0.3s ease;
+}
+
+.button:hover {
+  transform: scale(1.1);
+  background: linear-gradient(90deg, #ff89b1, #ff7c92);
+}
+
+/* Loading Spinner */
+.loadingSpinner {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #fff;
+  margin: 2rem 0;
+}
+
+/* Error Message */
+.error {
+  color: #ff4d4f;
+  text-align: center;
+  font-size: 1rem;
+  margin: 1.5rem 0;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr); /* 3 columns for medium screens */
+  }
+
+  .header h1 {
+    font-size: 2rem;
+  }
+
+  .header p {
+    font-size: 0.9rem;
+  }
+
+  .poster {
+    height: 200px;
+  }
+
+  .button {
+    padding: 0.5rem 1.2rem;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns for smaller screens */
+    gap: 1rem; /* Reduces spacing */
+  }
+
+  .poster {
+    height: 180px;
+  }
+
+  .button {
+    padding: 0.4rem 1rem;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .grid {
+    grid-template-columns: 1fr; /* 1 column for mobile devices */
+    gap: 0.8rem; /* Tighter spacing for mobile */
+  }
+
+  .header h1 {
+    font-size: 1.8rem;
+  }
+
+  .header p {
+    font-size: 0.8rem;
+  }
+
+  .poster {
+    height: 160px;
+  }
+
+  .button {
+    padding: 0.4rem 1rem;
+    font-size: 0.7rem;
+  }
+}
